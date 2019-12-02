@@ -1,0 +1,17 @@
+{% extends "kitchens/base.html" %}
+{% block content %}
+ <div class="kitchen-body">
+
+     {% for kitchen in kitchens %}
+
+                <div class="OneKit">
+
+                    <a class="mr-2" href="{% url 'kitchen-detail' kitchen.id %}"> {{ kitchen.author }}</a>
+                    <small class="text-muted">{{ kitchen.date_posted }}</small>
+                    <h2><a class="kitchen-title" href="#">{{ kitchen.title }}</a></h2>
+                    <p class="kitchen-content">{{ kitchen.content }}</p>
+                </div>
+         {% endfor %}
+{% endblock content %}
+
+ </div>
